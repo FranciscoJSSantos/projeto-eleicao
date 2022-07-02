@@ -3,12 +3,14 @@ header {
   background-color: #f1f1f1;
   padding: 20px 10px;
   background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header a {
   float: left;
   color: black;
-  text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
@@ -19,7 +21,7 @@ header a {
 header a.logo {
   font-size: 25px;
   font-weight: bold;
-  background-color: #f4f4f4;
+  color: #f4f4f4;
 }
 
 .search_container{
@@ -175,7 +177,6 @@ header a.logo {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #2e48ff;
   margin-right: 2px;
 }
 
@@ -184,7 +185,6 @@ header a.logo {
   display: inline-block;
   font-weight: 700;
   font-size: 12px;
-  color: #2e48ff;
 }
 
 .candidate-total-votes-number {
@@ -198,5 +198,30 @@ header a.logo {
   color: gray;
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #141414;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+footer p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
 
+.maisVotado{
+  color:#2e48ff;
+}
+
+.menosVotado{
+  color:#f20000;
+}

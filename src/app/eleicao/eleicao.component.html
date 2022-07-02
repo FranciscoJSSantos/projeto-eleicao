@@ -1,5 +1,5 @@
 <header>
-    <a class="logo">Acompanhamento das votações</a>
+    <a class="logo">Eleições 2020</a>
 </header>
 <div class="search_container">
   <form class="items_container">
@@ -23,8 +23,8 @@
       <span class="candidate-entourage">{{ dados.sigla }}</span>
       <div class="candidate-votes">
 
-        <span class="candidate-percentage-number">{{ dados.porcentagemVotos }}</span>
-        <span class="candidate-percentage">%</span>
+        <span [ngClass]="dados.qtdTotalVotos >= 500000 ? 'maisVotado' : 'menosVotado'" class="candidate-percentage-number">{{ dados.porcentagemVotos }}</span>
+        <span [ngClass]="dados.qtdTotalVotos >= 500000 ? 'maisVotado' : 'menosVotado'" class="candidate-percentage">%</span>
         <span class="candidate-total-votes-number">{{ dados.qtdTotalVotos | number }}</span>
 
       </div>
@@ -32,4 +32,8 @@
 
   </div>
 </div>
+
+<footer>
+  <p>copyright &copy;2022 designed by Francisco Santana <p>
+</footer>
 
