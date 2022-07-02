@@ -10,11 +10,23 @@
 
 <div class="card_candidates">
   <div class="candidate-container candidate-situation-defined" *ngFor="let dados of dadosEleicoes | orderBy: order : true : false">
-
     <div class="img-rule">
       <div class="image-container">
+         <circle-progress
+    [percent]="dados.porcentagemVotos"
+    [radius]="50"
+    [outerStrokeColor]="'#2e48ff'"
+    [innerStrokeColor]="'#4358ea'"
+    [animation]="true"
+    [animationDuration]="300"
+    [outerStrokeWidth] = "5"
+    [innerStrokeWidth] = "0"
+    [imageWidth] = "imageWidth"
+
+  >
+</circle-progress>
         <img [src]="dados.imagem" alt="Bruno Covas"
-        class="candidate-image vp-less-than-one-false">
+        class="candidate-image">
       </div>
     </div>
 
@@ -32,6 +44,9 @@
 
   </div>
 </div>
+
+
+
 
 <footer>
   <p>copyright &copy;2022 designed by Francisco Santana <p>

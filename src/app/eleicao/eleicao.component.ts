@@ -13,6 +13,10 @@ export class EleicaoComponent implements OnInit {
 
   partido = "";
 
+  imageWidth = 30;
+
+  vetor: [] = [];
+
   order: string = 'qtdTotalVotos';
 
   dadosEleicoes: Eleicao[] | undefined;
@@ -25,5 +29,15 @@ export class EleicaoComponent implements OnInit {
     const dadosEleicoes = this.eleicao_service.getAll();
 
     this.dadosEleicoes = dadosEleicoes;
+
+    this.selecao()
+  }
+
+  selecao() {
+    this.eleicao_service.getDadosSergipe().subscribe(
+      (res: any) => {
+        this.vetor = res.data;
+      }
+    )
   }
 }
