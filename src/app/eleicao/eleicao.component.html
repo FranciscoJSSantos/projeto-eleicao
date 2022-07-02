@@ -1,0 +1,35 @@
+<header>
+    <a class="logo">Acompanhamento das votações</a>
+</header>
+<div class="search_container">
+  <form class="items_container">
+      <input class="search_button" type="text" placeholder="Buscar Partido..." name="partido" [(ngModel)]="partido">
+      <a href="#"><mat-icon class="icone_search">search</mat-icon></a>
+  </form>
+</div>
+
+<div class="card_candidates">
+  <div class="candidate-container candidate-situation-defined" *ngFor="let dados of dadosEleicoes | orderBy: order : true : false">
+
+    <div class="img-rule">
+      <div class="image-container">
+        <img [src]="dados.imagem" alt="Bruno Covas"
+        class="candidate-image vp-less-than-one-false">
+      </div>
+    </div>
+
+    <div class="text-container">
+      <span class="candidate-name"> {{ dados.nome }}</span>
+      <span class="candidate-entourage">{{ dados.sigla }}</span>
+      <div class="candidate-votes">
+
+        <span class="candidate-percentage-number">{{ dados.porcentagemVotos }}</span>
+        <span class="candidate-percentage">%</span>
+        <span class="candidate-total-votes-number">{{ dados.qtdTotalVotos | number }}</span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
