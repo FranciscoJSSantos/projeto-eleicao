@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { dadosEleicoes, Eleicao } from './eleicao/eleicao';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import * as JSZip from 'jszip';
 import { Dados } from './eleicao/dados';
 
 @Injectable({
@@ -13,10 +12,14 @@ export class EleicaoService {
 
   dadosEleicao: Eleicao[] = dadosEleicoes;
 
-  dados: Dados[] = [];
+  //instanciando a interface
+  dados: Dados = {} as Dados;
 
   url = "https://resultados.tse.jus.br/oficial/ele2020/divulgacao/oficial/426/config/mun-e000426-cm.json";
-  urlSergipe = "https://resultados.tse.jus.br/oficial/#/eleicao;e=e426;uf=se;mu=31054/resultados";
+  urlZip = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2020.zip";
+
+
+
 
   constructor(
     public http: HttpClient
@@ -34,17 +37,5 @@ export class EleicaoService {
       })
     );
   }
-
-  getDadosSergipe():Observable<[]>{
-    return this.http.get(this.urlSergipe).pipe(
-      map((res: any) => {
-        console.log(JSON.parse(res));
-        return res;
-      })
-    );
-  }
-
-
-
 
 }

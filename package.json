@@ -20,9 +20,11 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "extract-zip": "^2.0.1",
     "jszip": "^3.10.0",
     "ng-circle-progress": "^1.5.1",
     "ngx-order-pipe": "^2.2.0",
+    "node-stream-zip": "^1.15.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -3,6 +3,7 @@ import { EleicaoService } from '../eleicao.service';
 import { Eleicao } from './eleicao';
 import { OrderPipe } from 'ngx-order-pipe';
 import { OrderModule } from 'ngx-order-pipe';
+import { Dados } from './dados';
 
 @Component({
   selector: 'app-eleicao',
@@ -19,7 +20,11 @@ export class EleicaoComponent implements OnInit {
 
   order: string = 'qtdTotalVotos';
 
-  dadosEleicoes: Eleicao[] | undefined;
+  dadosEleicoes: Eleicao[] = [];
+
+  getData = "";
+
+  dados: Dados = {} as Dados;
 
   constructor(
     private eleicao_service: EleicaoService
@@ -31,13 +36,16 @@ export class EleicaoComponent implements OnInit {
     this.dadosEleicoes = dadosEleicoes;
 
     this.selecao()
+
   }
 
+
   selecao() {
-    this.eleicao_service.getDadosSergipe().subscribe(
+   return this.eleicao_service.getDados().subscribe(
       (res: any) => {
-        this.vetor = res.data;
+        this.dados = res;
       }
     )
   }
+
 }
